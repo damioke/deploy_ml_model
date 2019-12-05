@@ -1,0 +1,13 @@
+pathlib>=1.0.1,<1.1.0
+numpy>=1.17.4,<1.18.0
+pandas>=0.25.3,<0.26.0
+scikit-learn>=0.21.3,<0.22.0
+Flask>=1.1.1,<1.2.0
+datetime>=4.3,<4.4
+gunicorn>=20.0.0,<21.0.0
+# sklearn.externals
+# sklearn.model_selection
+# sklearn.base
+# sklearn.linear_model
+# sklearn.pipeline
+# sklearn.preprocessing

@@ -1,0 +1,23 @@
+
+# Pull image
+FROM python:3.7-slim
+LABEL maintainer="damioke.info@gmail.com"
+ENV PYTHONUNBUFFERED 1
+
+# copy to container image and install production dependencies.
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+# create a directory in the container image.
+RUN mkdir /app
+
+# switch to the directory.
+WORKDIR /app
+
+# copy content of app folder in local drectory to copy to app in container image.
+COPY ./app /app
+
+# Run the web service on container startup.
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 app:app
+
+
